@@ -22,10 +22,10 @@ brutToNet2<- function(brut, statut){  # l'argument d'entrée étant le salaire b
     
     if(statut=="Cadre"){ 
       taux=0.75 #le taux étant de 25 pourcent, 100-25=75 donc on a 75% du salaire Brut 
-      net<-brut*0.925*0.75 #calcul du salaire net en prenant en compte le prélèvement a la source
+      net<-brut*0.925*taux #calcul du salaire net en prenant en compte le prélèvement a la source
     }
   }
   
   else{return("ERROR : type not expected")} #Si brut n'est pas numérique, cette erreur est renvoyée
-  return(net) #renvoie du résultat du calcul
-  } 
+  return(net)
+  } #renvoie du résultat du calcul
