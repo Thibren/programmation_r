@@ -9,3 +9,23 @@ brutToNet1<- function(brut){  #définition de la fonction avec l'argument d'entr
   return(net) #renvoie du résultat du calcul
 }
 
+#Question 2.1.2: Brut vers net en fonction du statut
+brutToNet2<- function(brut, statut){  # l'argument d'entrée étant le salaire brut et le statut
+  if(is.numeric(brut)==TRUE){ #Verification que la donnée d'entrée est au bon format
+    
+    if(statut == "Cadre" | statut=="Non-Cadre"){}else{return("ERROR : contract unknown")} #verifie si on a le bon type de contrat
+    
+    if(statut=="Non-cadre"){ #condition su le statut est cadre
+      taux<-0.78 #le taux étant de 22 pourcent, 100-22=78 donc on a 78% du salaire Brut 
+      net<-brut*0.925*taux  #calcul du salaire net en prenant en compte le prélèvement a la source
+    } 
+    
+    if(statut=="Cadre"){ 
+      taux=0.75 #le taux étant de 25 pourcent, 100-25=75 donc on a 75% du salaire Brut 
+      net<-brut*0.925*0.75 #calcul du salaire net en prenant en compte le prélèvement a la source
+    }
+  }
+  
+  else{return("ERROR : type not expected")} #Si brut n'est pas numérique, cette erreur est renvoyée
+  return(net) #renvoie du résultat du calcul
+  } 
