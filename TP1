@@ -1,1 +1,11 @@
+#Question 2.1.1: brut vers net pour les non-cadres
+brutToNet1<- function(brut){  #définition de la fonction avec l'argument d'entrée étant le salaire brut
+  if(is.numeric(brut)==TRUE){ #Verification que la donnée d'entrée est au bon format
+    taux<-0.78 #le taux étant de 22 pourcent, 1-22=78 donc on a 78% du salaire Brut 
+    net<-brut*taux  #calcul du salaire net
+  }
+  
+  else{return("ERROR : type not expected")} #Si brut n'est pas numérique, cette erreur est renvoyée
+  return(net) #renvoie du résultat du calcul
+}
 
